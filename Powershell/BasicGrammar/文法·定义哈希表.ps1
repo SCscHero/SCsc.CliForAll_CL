@@ -18,3 +18,12 @@ $servers.Remove("LON-DC1")
 # 更新键值
 $servers."LON-SRV2"="172.16.0.100"
 $servers | Get-Member
+
+# 1. 如何引用数组中的第一项？
+$users[0] # 正确。 在数组中，所有的项都有索引号，第一个索引号为 0。
+$users[1]
+$users["1"]
+# 2. 将使用哪个命令来更新与哈希表中名为 dc1 的键关联的值？
+$computers.keys("dc1") = "Domain Controller"
+$computers[5] = "Domain Controller"
+$computers.dc1 = "Domain Controller" # 正确。 为哈希表中的键分配值时，请使用格式 $hash.key = value。
