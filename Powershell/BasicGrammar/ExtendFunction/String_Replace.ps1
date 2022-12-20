@@ -1,0 +1,3 @@
+
+
+$RegexFileName = $item.Replace($RegexPath,"")
